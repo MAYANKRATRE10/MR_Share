@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded</title>
+</head>
+<body>
+    <h1>Your file has been uploaded </h1>
+    <button id="button" onclick="copylink()">Copy Link</button>
+    <script>
+        function copylink (){
+            navigator.clipboard.writeText('<%=data%>');
+            console.log( document.getElementById('button').style.color)
+           
+        }
+    </script>
+</body>
+</html>

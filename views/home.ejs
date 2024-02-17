@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        .form{
+            display: grid; 
+            grid-template-columns: auto 1fr;
+            gap: 1rem; 
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/" method="post" class="form" enctype="multipart/form-data" >
+        <label for="owner_name">Owners Name</label>
+        <input type="text" id="owner_name" name="owner_name" required>
+        <label for="file_name">File Name</label>
+        <input type="text" id="file_name" name="file_name" required> 
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required> 
+        <label for="file">File : </label> 
+        <input type="file" id="file" name="file" required>
+        <button type="submit">Upload</button>
+      </form>
+      <h4><%= data %></h4>
+      <%if( data != '') { %>
+        <div>
+            <button onclick="copylink()">Copy Link</button>
+        </div>
+      <%}%>
+    <script>
+            function copylink (){
+                navigator.clipboard.writeText('<%=data%>');
+                console.log( '<%=data%>')
+               
+            }
+    </script>
+</body>
+</html>
